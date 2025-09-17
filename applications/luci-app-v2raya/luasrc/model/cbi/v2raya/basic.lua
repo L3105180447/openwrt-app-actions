@@ -47,7 +47,7 @@ o.default = auto
 o.rmempty = false
 
 o = s:taboption("settings", Value, "log_file", translate("Log file"))
-o.default = "/var/log/v2raya/v2raya.log"
+o.default = "/tmp/log/v2raya/v2raya.log"
 o.rmempty = false
 o.readonly = true
 
