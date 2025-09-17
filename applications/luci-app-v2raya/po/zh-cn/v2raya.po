@@ -1,9 +1,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
-msgid "Setting"
-msgstr "设置"
-
 msgid "Basic Setting"
 msgstr "基本设置"
 
