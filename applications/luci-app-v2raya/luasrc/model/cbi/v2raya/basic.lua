@@ -49,7 +49,7 @@ o.rmempty = false
 o = s:taboption("settings", Value, "log_file", translate("Log file"))
 o.default = "/tmp/log/v2raya/v2raya.log"
 o.rmempty = false
-o.readonly = true
+o.readonly = false
 
 o = s:taboption("settings", ListValue, "log_level", translate("Log Level"))
 o:value("trace",translate("Trace"))
