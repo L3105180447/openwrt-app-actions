@@ -1,0 +1,5 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+msgid "V2ray Server"
+msgstr "V2ray 服务器"
