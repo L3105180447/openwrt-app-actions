@@ -3,3 +3,171 @@ msgstr "Content-Type: text/plain; charset=UTF-8"
 
 msgid "V2ray Server"
 msgstr "V2ray 服务器"
+
+msgid "Global Settings"
+msgstr "全局设置"
+
+msgid "Server Config"
+msgstr "服务器配置"
+
+msgid "Users Manager"
+msgstr "用户管理"
+
+msgid "Remarks"
+msgstr "备注"
+
+msgid "Bind Local"
+msgstr "本机监听"
+
+msgid "When selected, it can only be accessed locally,It is recommended to turn on when using reverse proxies."
+msgstr "当勾选时，只能由本机访问此端口，当开启反向代理时建议勾选此项。"
+
+msgid "Port"
+msgstr "端口"
+
+msgid "User name"
+msgstr "用户名"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Protocol"
+msgstr "协议"
+
+msgid "none"
+msgstr "无"
+
+msgid "ID"
+msgstr "标识符"
+
+msgid "Alter ID"
+msgstr "额外ID"
+
+msgid "User Level"
+msgstr "用户等级"
+
+msgid "When OTA is enabled, V2Ray will reject connections that are not OTA enabled. This option is invalid when using AEAD encryption."
+msgstr "开启 OTA 后，V2Ray 会拒绝未启用 OTA 的连接。当使用 AEAD 加密时，该选项无效。"
+
+msgid "Transport"
+msgstr "传输方式"
+
+msgid "Camouflage Type"
+msgstr "伪装类型"
+
+msgid "Use HTTPS"
+msgstr "使用HTTPS TLS配置"
+
+msgid "Public key absolute path"
+msgstr "公钥文件绝对路径"
+
+msgid "Private key absolute path"
+msgstr "私钥文件绝对路径"
+
+msgid "none: default, no masquerade, data sent is packets with no characteristics."
+msgstr "none：默认值，不进行伪装，发送的数据是没有特征的数据包。"
+
+msgid "srtp: disguised as an SRTP packet, it will be recognized as video call data (such as FaceTime)."
+msgstr "srtp：伪装成 SRTP 数据包，会被识别为视频通话数据（如 FaceTime）。"
+
+msgid "utp: packets disguised as uTP will be recognized as bittorrent downloaded data."
+msgstr "utp：伪装成 uTP 数据包，会被识别为 BT 下载数据。"
+
+msgid "wechat-video: packets disguised as WeChat video calls."
+msgstr "wechat-video：伪装成微信视频通话的数据包。"
+
+msgid "dtls: disguised as DTLS 1.2 packet."
+msgstr "dtls：伪装成 DTLS 1.2 数据包。"
+
+msgid "wireguard: disguised as a WireGuard packet. (not really WireGuard protocol)"
+msgstr "wireguard：伪装成 WireGuard 数据包。(并不是真正的 WireGuard 协议)"
+
+msgid "Accept LAN Access"
+msgstr "接受局域网访问"
+
+msgid "When selected, it can accessed lan , this will not be safe!"
+msgstr "当勾选时，可以直接访问局域网，这将不安全！"
+
+msgid "Clear logs"
+msgstr "清空日志"
+
+msgid "Enable"
+msgstr "启用"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Get remote version info failed."
+msgstr "获取远程版本信息失败。"
+
+msgid "Download url is required."
+msgstr "需要下载链接。"
+
+msgid "File path required."
+msgstr "需要文件路径。"
+
+msgid "Client file is required."
+msgstr "需要客户端文件。"
+
+msgid "Encrypt Method"
+msgstr "加密方式"
+
+msgid "HTTP Host"
+msgstr "HTTP 主机"
+
+msgid "HTTP Path"
+msgstr "HTTP 路径"
+
+msgid "KCP MTU"
+msgstr "KCP 最大传输单元（MTU）"
+
+msgid "KCP TTI"
+msgstr "KCP 传输间隔时间（TTI）"
+
+msgid "KCP uplinkCapacity"
+msgstr "KCP 上行容量"
+
+msgid "KCP downlinkCapacity"
+msgstr "KCP 下行容量"
+
+msgid "KCP Congestion"
+msgstr "KCP 拥塞控制"
+
+msgid "KCP readBufferSize"
+msgstr "KCP 读取缓冲区大小"
+
+msgid "KCP writeBufferSize"
+msgstr "KCP 写入缓冲区大小"
+
+msgid "WebSocket Path"
+msgstr "WebSocket 路径"
+
+msgid "WebSocket Host"
+msgstr "WebSocket 主机"
+
+msgid "HTTP/2 Path"
+msgstr "HTTP/2 路径"
+
+msgid "HTTP/2 Host"
+msgstr "HTTP/2 主机名"
+
+msgid "Camouflage Domain,you can not fill in"
+msgstr "伪装域名，您不能填写"
+
+msgid "Encrypt Method"
+msgstr "加密方法"
+
+msgid "Key"
+msgstr "密钥"
+
+msgid "Use HTTPS"
+msgstr "使用 HTTPS"
+
+msgid "Domain"
+msgstr "域名"
+
+msgid "as:"
+msgstr "作为："
+
+msgid "Collecting data..."
+msgstr "正在收集数据…"
