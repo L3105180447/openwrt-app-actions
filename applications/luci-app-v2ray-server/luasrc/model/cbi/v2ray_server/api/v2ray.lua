@@ -70,27 +70,28 @@ local function exec(cmd, args, writer, timeout)
 end
 
 local function compare_versions(ver1, comp, ver2)
-    local table = table
-
     local av1 = util.split(ver1, "[%.%-]", nil, true)
     local av2 = util.split(ver2, "[%.%-]", nil, true)
 
-    local max = table.getn(av1)
-    local n2 = table.getn(av2)
-    if (max < n2) then max = n2 end
+    local max = math.max(#av1, #av2)
 
-    for i = 1, max, 1 do
-        local s1 = av1[i] or ""
-        local s2 = av2[i] or ""
+    for i = 1, max do
+        local n1 = tonumber(av1[i]) or 0
+        local n2 = tonumber(av2[i]) or 0
 
-        if comp == "~=" and (s1 ~= s2) then return true end
-        if (comp == "<" or comp == "<=") and (s1 < s2) then return true end
-        if (comp == ">" or comp == ">=") and (s1 > s2) then return true end
-        if (s1 ~= s2) then return false end
+        if n1 ~= n2 then
+            if comp == "<"  then return n1 < n2 end
+            if comp == "<=" then return n1 <= n2 end
+            if comp == ">"  then return n1 > n2 end
+            if comp == ">=" then return n1 >= n2 end
+            if comp == "~=" then return true end
+            return false
+        end
     end
 
-    return not (comp == "<" or comp == ">")
+    return (comp == "=" or comp == "==" or comp == "<=" or comp == ">=")
 end
+
 
 local function auto_get_arch()
     local arch = nixio.uname().machine or ""
