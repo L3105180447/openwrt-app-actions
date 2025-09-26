@@ -133,6 +133,9 @@ local function get_file_info(arch)
         file_tree = "64"
     elseif arch == "aarch64" then
         file_tree = "arm64"
+        if DISTRIB_TARGET and string.match(DISTRIB_TARGET, "ipq60xx/generic") then
+            file_tree = "arm64-v8a-locked"
+        end
     elseif arch == "ramips" then
         file_tree = "mipsle"
     elseif arch == "ar71xx" then
@@ -210,10 +213,19 @@ function to_check(arch)
 
     if needs_update then
         html_url = json.html_url
-        for _, v in ipairs(json.assets) do
-            if v.name and v.name:match("linux%-" .. file_tree) then
-                download_url = v.browser_download_url
-                break
+        if file_tree == "arm64-v8a-locked" then
+            for _, v in ipairs(json.assets) do
+                if v.name == "v2ray-linux-arm64-v8a.zip" then
+                    download_url = v.browser_download_url
+                    break
+                end
+            end
+        else
+            for _, v in ipairs(json.assets) do
+                if v.name and v.name:match("linux%-" .. file_tree) then
+                    download_url = v.browser_download_url
+                    break
+                end
             end
         end
     end
