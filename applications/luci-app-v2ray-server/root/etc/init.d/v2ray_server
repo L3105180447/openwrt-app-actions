@@ -21,7 +21,6 @@ gen_v2ray_config_file() {
 	echolog "$remarks $port 生成并运行 V2ray 配置文件 - $CONFIG_PATH/$1.json" 
 	if [ ! -f /var/v2server ]; then
 		local ret="/usr/bin/v2ray"
-		[ ! -f "$ret" ] && ret="/usr/bin/xray"
 		cp -a $ret /var/v2server
 	fi
 	/var/v2server run -config $CONFIG_PATH/$1.json >/dev/null 2>&1 &
