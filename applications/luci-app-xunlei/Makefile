@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.3-20240822
-PKG_RELEASE:=
+PKG_RELEASE:=1
 
 LUCI_TITLE:=LuCI support for Xunlei
 LUCI_PKGARCH:=all
