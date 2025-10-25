@@ -23,12 +23,6 @@ t:tab("log", translate("Client Log"))
 e = t:taboption("base", Flag, "enabled", translate("Enabled"))
 e.rmempty = false
 
-e = t:taboption("base", Value, "time", translate("Service registration interval"))
-e.description = translate("0 means disable this feature, unit: min")
-e.datatype = "range(0,59)"
-e.default = 0
-e.rmempty = false
-
 e = t:taboption("base", Value, "server_addr", translate("Server"))
 e.optional = false
 e.rmempty = false
@@ -38,28 +32,8 @@ e.datatype = "port"
 e.optional = false
 e.rmempty = false
 
-e = t:taboption("base", ListValue, "protocol", translate("Protocol Type"))
-e.description = translate("Protocol specifies the protocol to use when interacting with the server. Valid values are tcp, kcp, quic, websocket, wss.By default, this value is tcp.<font color=\"red\">If the protocol need other params, you can add them by \"Extra params\" in \"Other Settings\".</font>")
-e.default = "tcp"
-e:value("tcp", "tcp")
-e:value("kcp", "kcp")
-e:value("quic", "quic")
-e:value("websocket", "websocket")
-e:value("wss", "wss")
-
-e = t:taboption("base", Flag, "enable_http_proxy", translate("Connect frps by HTTP PROXY"))
-e.description = translate("frpc can connect frps using HTTP PROXY")
-e.default = "0"
-e.rmempty = false
-e:depends("protocol", "tcp")
-
-e = t:taboption("base", Value, "http_proxy", translate("HTTP PROXY"))
-e.placeholder = "http://user:pwd@192.168.1.128:8080"
-e:depends("enable_http_proxy", 1)
-e.optional = false
-
 e = t:taboption("base", Value, "token", translate("Token"))
-e.description = translate("Token specifies the authorization token used to create keys to be sent to the server. The server must have a matching token for authorization to succeed.<br/>By default, this value is empty.")
+e.description = translate("Time duration between server of frpc and frps mustn't exceed 15 minutes.")
 e.optional = false
 e.password = true
 e.rmempty = false
@@ -70,8 +44,22 @@ e.optional = true
 e.default = ""
 e.rmempty = false
 
+e = t:taboption("base", Value, "vhost_http_port", translate("Vhost HTTP Port"))
+e.datatype = "port"
+e.rmempty = false
+
+e = t:taboption("base", Value, "vhost_https_port", translate("Vhost HTTPS Port"))
+e.datatype = "port"
+e.rmempty = false
+
+e = t:taboption("base", Value, "time", translate("Service registration interval"))
+e.description = translate("0 means disable this feature, unit: min")
+e.datatype = "range(0,59)"
+e.default = 30
+e.rmempty = false
+
 e = t:taboption("other", Flag, "login_fail_exit", translate("Exit program when first login failed"))
-e.description = translate("Decide if exit program when first login failed, otherwise continuous relogin to frps.")
+e.description = translate("decide if exit program when first login failed, otherwise continuous relogin to frps.")
 e.default = "1"
 e.rmempty = false
 
@@ -84,6 +72,47 @@ e = t:taboption("other", Flag, "tls_enable", translate("Use TLS Connection"))
 e.description = translate("if tls_enable is true, frpc will connect frps by tls.")
 e.default = "0"
 e.rmempty = false
+
+e = t:taboption("other", Flag, "enable_custom_certificate", translate("Custom TLS Protocol Encryption"))
+e.description = translate("Frp supports traffic encryption between frpc and frps through the TLS protocol, and supports client or server unidirectional and bidirectional authentication.")
+e.default = "0"
+e.rmempty = false
+e:depends("tls_enable", 1)
+
+e = t:taboption("other", Value, "tls_cert_file", translate("Client Certificate File"))
+e.description = translate("Frps one-way verifies the identity of frpc.")
+e.placeholder = "/var/etc/frp/client.crt"
+e.optional = false
+e:depends("enable_custom_certificate", 1)
+
+e = t:taboption("other", Value, "tls_key_file", translate("Client Key File"))
+e.description = translate("Frps one-way verifies the identity of frpc.")
+e.placeholder = "/var/etc/frp/client.key"
+e.optional = false
+e:depends("enable_custom_certificate", 1)
+
+e = t:taboption("other", Value, "tls_trusted_ca_file", translate("CA Certificate File"))
+e.description = translate("Frpc one-way verifies the identity of frps.")
+e.placeholder = "/var/etc/frp/ca.crt"
+e.optional = false
+e:depends("enable_custom_certificate", 1)
+
+e = t:taboption("other", ListValue, "protocol", translate("Protocol Type"))
+e.description = translate("Frp support kcp protocol since v0.12.0")
+e.default = "tcp"
+e:value("tcp", translate("TCP Protocol"))
+e:value("kcp", translate("KCP Protocol"))
+
+e = t:taboption("other", Flag, "enable_http_proxy", translate("Connect frps by HTTP PROXY"))
+e.description = translate("frpc can connect frps using HTTP PROXY")
+e.default = "0"
+e.rmempty = false
+e:depends("protocol", "tcp")
+
+e = t:taboption("other", Value, "http_proxy", translate("HTTP PROXY"))
+e.placeholder = "http://user:pwd@192.168.1.128:8080"
+e:depends("enable_http_proxy", 1)
+e.optional = false
 
 e = t:taboption("other", Flag, "enable_cpool", translate("Enable Connection Pool"))
 e.description = translate("This feature is fit for a large number of short connections.")
@@ -130,10 +159,6 @@ e.optional = false
 e.default = "admin"
 e.password = true
 e:depends("admin_enable", 1)
-
-e = t:taboption("other", DynamicList, "extra_params", translate("Extra params"))
-e.description = translate("List of extra params, which not shown in Basic Settings, such as dial_server_timeout, dial_server_keepalive. if you need those params, you can add extra params dial_server_timeout=10 and dial_server_keepalive=7200.")
-e.placeholder = translate("param=value")
 
 e = t:taboption("log", TextValue, "log")
 e.rows = 26

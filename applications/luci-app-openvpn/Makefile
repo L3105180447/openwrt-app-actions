@@ -6,13 +6,10 @@
 
 include $(TOPDIR)/rules.mk
 
-LUCI_TITLE:=LuCI for FRPC
-LUCI_DEPENDS:=+wget +frpc
-LUCI_PKGARCH:=all
+LUCI_TITLE:=LuCI Support for OpenVPN
+LUCI_DEPENDS:=
 
-PKG_NAME:=luci-app-frpc
-PKG_VERSION:=1.4
-PKG_RELEASE:=2
+PKG_LICENSE:=Apache-2.0
 
 include ../../luci.mk
 
