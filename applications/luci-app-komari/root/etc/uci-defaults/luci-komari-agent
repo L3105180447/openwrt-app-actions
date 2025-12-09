@@ -1,0 +1,11 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@komari-agent[-1]
+	add ucitrack komari-agent
+	set ucitrack.@komari-agent[-1].init=komari-agent
+	commit ucitrack
+EOF
+
+rm -f /tmp/luci-indexcache
+exit 0
