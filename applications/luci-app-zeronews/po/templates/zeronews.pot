@@ -1,0 +1,100 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:65
+msgid "Clear Log"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:67
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:32
+msgid "Collecting data..."
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:73
+msgid "Enable"
+msgstr ""
+
+#: applications/luci-app-zeronews/root/usr/share/rpcd/acl.d/luci-app-zeronews.json:3
+msgid "Grant UCI access for luci-app-zeronews"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:81
+msgid ""
+"If the ZeroNews Agent encounters problems or needs to reset its "
+"configuration, you can use the reset feature to restore it to the state it "
+"was in when first downloaded."
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:30
+msgid "Loading..."
+msgstr ""
+
+#: applications/luci-app-zeronews/root/usr/share/luci/menu.d/luci-app-zeronews.json:21
+msgid "Log"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:48
+msgid "Log file does not exist."
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:39
+msgid "Log is empty."
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:37
+msgid "NOT RUNNING"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:34
+msgid "Open Console"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:77
+msgid "Please enter your Token"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:35
+msgid "RUNNING"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:75
+msgid "Refresh every %s seconds."
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:81
+msgid "Reset"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:88
+msgid "Reset Successful"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:82
+msgid "Reset ZeroNews"
+msgstr ""
+
+#: applications/luci-app-zeronews/root/usr/share/luci/menu.d/luci-app-zeronews.json:13
+msgid "Settings"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:77
+msgid "Token"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:52
+msgid "Unknown error: %s"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:35
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:37
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:53
+#: applications/luci-app-zeronews/root/usr/share/luci/menu.d/luci-app-zeronews.json:3
+msgid "ZeroNews"
+msgstr ""
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:54
+msgid ""
+"ZeroNews is an innovative edge cloud intranet penetration platform designed "
+"to help users quickly address security and fast access needs between "
+"internal and external networks."
+msgstr ""

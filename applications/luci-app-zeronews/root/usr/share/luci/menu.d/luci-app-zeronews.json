@@ -1,0 +1,28 @@
+{
+	"admin/services/zeronews": {
+		"title": "ZeroNews",
+		"action": {
+			"type": "firstchild"
+		},
+		"depends": {
+			"acl": [ "luci-app-zeronews" ],
+			"uci": { "zeronews": true }
+		}
+	},
+	"admin/services/zeronews/config": {
+		"title": "Settings",
+		"order": 10,
+		"action": {
+			"type": "view",
+			"path": "zeronews/config" 
+		}
+	},
+	"admin/services/zeronews/log": {
+		"title": "Log",
+		"order": 20,
+		"action": {
+			"type": "view",
+			"path": "zeronews/log" 
+		}
+	}
+}

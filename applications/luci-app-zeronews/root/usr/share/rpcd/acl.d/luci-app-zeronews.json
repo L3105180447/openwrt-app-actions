@@ -1,0 +1,22 @@
+{
+	"luci-app-zeronews": {
+		"description": "Grant UCI access for luci-app-zeronews",
+		"read": {
+			"file": {
+				"/etc/zeronews/zeronews.txt": [ "read" ],
+				"/usr/bin/zeronews": [ "exec" ],
+				"/bin/sh": [ "exec" ]
+			},
+			"ubus": {
+				"service": [ "list" ]
+			},
+			"uci": [ "zeronews" ]
+		},
+		"write": {
+			"file": {
+				"/etc/zeronews/zeronews.txt": [ "write" ]
+			},
+			"uci": [ "zeronews" ]
+		}
+	}
+}

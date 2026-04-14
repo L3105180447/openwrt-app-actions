@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2026-02-02 01:11+0000\n"
+"Last-Translator: Internet1235 "
+"<135099493+Internet1235@users.noreply.github.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/zeronews/zeronews/zh_Hans/>\n"
+"Language: zh_Hans\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.16-dev\n"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:65
+msgid "Clear Log"
+msgstr "清空日志"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:67
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:32
+msgid "Collecting data..."
+msgstr "正在收集数据中..."
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:73
+msgid "Enable"
+msgstr "启用"
+
+#: applications/luci-app-zeronews/root/usr/share/rpcd/acl.d/luci-app-zeronews.json:3
+msgid "Grant UCI access for luci-app-zeronews"
+msgstr "授予 luci-app-zeronews 访问 UCI 配置的权限"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:81
+msgid ""
+"If the ZeroNews Agent encounters problems or needs to reset its "
+"configuration, you can use the reset feature to restore it to the state it "
+"was in when first downloaded."
+msgstr "ZeroNews Agent 如出现异常或需重置配置，可执行 reset 一键恢复到刚下载状态。"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:30
+msgid "Loading..."
+msgstr "加载中…"
+
+#: applications/luci-app-zeronews/root/usr/share/luci/menu.d/luci-app-zeronews.json:21
+msgid "Log"
+msgstr "日志"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:48
+msgid "Log file does not exist."
+msgstr "日志文件不存在。"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:39
+msgid "Log is empty."
+msgstr "日志为空。"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:37
+msgid "NOT RUNNING"
+msgstr "未在运行"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:34
+msgid "Open Console"
+msgstr "打开控制台"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:77
+msgid "Please enter your Token"
+msgstr "请输入您的Token"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:35
+msgid "RUNNING"
+msgstr "运行中"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:75
+msgid "Refresh every %s seconds."
+msgstr "每 %s 秒刷新。"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:81
+msgid "Reset"
+msgstr "重置"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:88
+msgid "Reset Successful"
+msgstr "重置成功"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:82
+msgid "Reset ZeroNews"
+msgstr "重置 ZeroNews"
+
+#: applications/luci-app-zeronews/root/usr/share/luci/menu.d/luci-app-zeronews.json:13
+msgid "Settings"
+msgstr "设置"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:77
+msgid "Token"
+msgstr "Token"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/log.js:52
+msgid "Unknown error: %s"
+msgstr "未知错误：%s"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:35
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:37
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:53
+#: applications/luci-app-zeronews/root/usr/share/luci/menu.d/luci-app-zeronews.json:3
+msgid "ZeroNews"
+msgstr "ZeroNews 零讯"
+
+#: applications/luci-app-zeronews/htdocs/luci-static/resources/view/zeronews/config.js:54
+msgid ""
+"ZeroNews is an innovative edge cloud intranet penetration platform designed "
+"to help users quickly address security and fast access needs between "
+"internal and external networks."
+msgstr ""
+"ZeroNews 是一个创新的边缘云内网穿透平台，旨在帮助用户快速解决内网与外网之间的"
+"安全、快速访问需求。"
