@@ -211,6 +211,37 @@ local function trim(v)
 	return tostring(v or ""):gsub("^%s+", ""):gsub("%s+$", "")
 end
 
+local function normalize_dir_path(path)
+	path = trim(path)
+	if path == "" then
+		return ""
+	end
+	if path ~= "/" then
+		path = path:gsub("/+$", "")
+		if path == "" then
+			path = "/"
+		end
+	end
+	return path
+end
+
+local function validate_base_dir_input(path)
+	path = normalize_dir_path(path)
+	if path == "" then
+		return false, "数据目录不能为空"
+	end
+	if not path:match("^/") then
+		return false, "数据目录必须是绝对路径"
+	end
+	if path == "/" then
+		return false, "数据目录不能使用 / 根目录"
+	end
+	if path == "/root" or path:match("^/root/") then
+		return false, "数据目录不能使用 /root 开头的目录"
+	end
+	return true, nil, path
+end
+
 local function split_dots(v)
 	local parts = {}
 	for part in tostring(v or ""):gmatch("[^%.]+") do
@@ -1080,6 +1111,60 @@ function action_config_data()
 	end
 
 	local function write_runtime_config(base_dir, service_cfg, runtime_cfg)
+		local function is_array(node)
+			if type(node) ~= "table" then
+				return false
+			end
+			local count = 0
+			for k, _ in pairs(node) do
+				if type(k) ~= "number" or k < 1 or k % 1 ~= 0 then
+					return false
+				end
+				count = count + 1
+			end
+			for i = 1, count do
+				if node[i] == nil then
+					return false
+				end
+			end
+			return true
+		end
+
+		local function prune_empty_tables(node)
+			if type(node) ~= "table" then
+				return false
+			end
+
+			if is_array(node) then
+				local compact = {}
+				for i = 1, #node do
+					local value = node[i]
+					if type(value) == "table" then
+						if not prune_empty_tables(value) then
+							compact[#compact + 1] = value
+						end
+					else
+						compact[#compact + 1] = value
+					end
+				end
+				for i = #node, 1, -1 do
+					node[i] = nil
+				end
+				for i = 1, #compact do
+					node[i] = compact[i]
+				end
+				return #node == 0
+			end
+
+			for k, v in pairs(node) do
+				if type(v) == "table" and prune_empty_tables(v) then
+					node[k] = nil
+				end
+			end
+
+			return next(node) == nil
+		end
+
 		local path = config_path(base_dir)
 		if path == "" then
 			return false
@@ -1156,6 +1241,8 @@ function action_config_data()
 		local model_cfg = ensure_table(defaults, "model")
 		model_cfg.primary = normalized_model_path(runtime_cfg.default_agent, model_name, infer_custom_provider_model(base_dir))
 
+		prune_empty_tables(cfg)
+
 		return write_json_file(path, cfg)
 	end
 
@@ -1231,11 +1318,13 @@ function action_config_data()
 		end
 
 		if has("base_dir") then
-			local base_dir = tostring(body.base_dir or "")
-			if base_dir == "" then
-				write_json({ ok = false, error = "base_dir required" })
+			local ok, err, normalized = validate_base_dir_input(body.base_dir or "")
+			if not ok then
+				write_json({ ok = false, error = err })
 				return
 			end
+			body.base_dir = normalized
+			local base_dir = normalized
 			uci:set("openclawmgr", section, "base_dir", base_dir)
 		end
 
